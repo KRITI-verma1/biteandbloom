@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bite & Bloom | Fresh food, bright moods</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="brand" href="#home" aria-label="Bite and Bloom home">
+        <span class="brand-mark">B&B</span>
+        <span><strong>Bite</strong> &amp; Bloom</span>
+    </a>
+    <nav class="navbar target" aria-label="Main navigation">
+    <a href="#home" class="navbar-link">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+    <a href="#menu" class="navbar-link">
+        <i class="fas fa-utensils"></i>
+        <span>Meals</span>
+    </a>
+    <a href="#contact" class="navbar-link">
+        <i class="fas fa-blender-phone"></i>
+        <span>Contact</span>
+    </a>
+
+</nav>
+    <button class="cart-button" type="button" aria-label="Open order basket" aria-expanded="false">
+        <i class="fas fa-bag-shopping"></i>
+        <span class="cart-count">0</span>
+    </button>
+    <button class="menu target" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<aside class="cart-drawer" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">Your basket</span><h2>Ready when you are.</h2></div><button class="close-cart" type="button" aria-label="Close basket">&times;</button></div>
+    <div class="cart-items"><p class="empty-cart">Your basket is waiting for something delicious.</p></div>
+    <div class="cart-footer"><div><span>Total</span><strong class="cart-total">₹0</strong></div><button class="checkout-button" type="button">Checkout <i class="fas fa-arrow-right"></i></button></div>
+</aside>
+<div class="drawer-backdrop"></div>
+
+
+
+
+<div class="container">
+        <section class="section-1" id="home">
+            <div class="hero-copy">
+                <span class="eyebrow">Good food, in a good mood</span>
+                <h1 class="section-heading">Fresh bites.<br><em>Bright days.</em></h1>
+                <p>Comfort food made for slow lunches, late-night cravings, and sharing with your favorite people.</p>
+                <div class="hero-actions"><a class="primary-button" href="#menu">Explore the menu <i class="fas fa-arrow-down"></i></a><span class="delivery-note"><i class="fas fa-location-dot"></i> Delivered in 30 min</span></div>
+            </div>
+      <div class="section-1-icons">
+      <i class='fas fa-ice-cream change'></i>
+      <i class='fas fa-egg'></i>
+      <i class='fas fa-pizza-slice'></i>
+      <i class='fas fa-hamburger'></i>
+     <i class='fas fa-cheese'></i>
+    </div>
+</section> 
+
+<section class="section-2" id="menu">
+ <div class="section-intro"><div><span class="eyebrow">Made to order</span><h2 class="section-heading">The good stuff</h2></div><p>From first bite to last crumb, every dish is prepared with bright ingredients and a little bit of joy.</p></div>
+ <div class="filter-bar"><div class="category-tabs"><button class="filter-button active" data-filter="all" aria-pressed="true">All dishes</button><button class="filter-button" data-filter="mains" aria-pressed="false">Mains</button><button class="filter-button" data-filter="sweet" aria-pressed="false">Sweets</button></div><label class="search-box"><i class="fas fa-search"></i><input type="search" placeholder="Find a craving..." aria-label="Search menu"></label></div>
+ <div class="cards-container">
+    <article class="card" data-category="mains" data-name="Mushroom toast" data-price="450"> 
+        <img src="assets/images/mushroomtoast.jpeg" class="card-img" alt="Mushroom toast">
+        <span class="card-tag">Fan favorite</span><h3 class="card-name">Mushroom toast</h3><p class="card-description">Garlic mushrooms, whipped ricotta, herbs.</p><div class="card-bottom"><strong>₹450</strong><button class="card-btn" type="button">Add to basket <i class="fas fa-plus"></i></button></div>
+    </article>
+    <article class="card" data-category="mains" data-name="Grilled chicken" data-price="650"> 
+        <img src="assets/images/grilled chicken.jpeg" class="card-img" alt="Grilled chicken with herbs">
+        <span class="card-tag">Chef's pick</span><h3 class="card-name">Grilled chicken</h3><p class="card-description">Smoky herb-marinated chicken, charred lemon, seasonal greens.</p><div class="card-bottom"><strong>₹650</strong><button class="card-btn" type="button">Add to basket <i class="fas fa-plus"></i></button></div>
+    </article>
+    <article class="card" data-category="sweet" data-name="Berry pancakes" data-price="350"> 
+        <img src="assets/images/3.png" class="card-img">
+        <span class="card-tag">Sweet</span><h3 class="card-name">Berry pancakes</h3><p class="card-description">Fluffy stacks, fresh berries, maple cream.</p><div class="card-bottom"><strong>₹350</strong><button class="card-btn" type="button">Add to basket <i class="fas fa-plus"></i></button></div>
+    </article>
+    <article class="card" data-category="mains" data-name="Garden pizza" data-price="16">
+        <img src="assets/images/4.png" class="card-img">
+        <span class="card-tag">New main</span><h3 class="card-name">Garden pizza</h3><p class="card-description">Wood-fired dough, roasted vegetables, mozzarella, basil.</p><div class="card-bottom"><strong>₹550</strong><button class="card-btn" type="button">Add to basket <i class="fas fa-plus"></i></button></div>
+    </article>
+    <article class="card" data-category="mains" data-name="Classic burger" data-price="15">
+        <img src="assets/images/5.png" class="card-img">
+        <span class="card-tag">Best seller</span><h3 class="card-name">Classic burger</h3><p class="card-description">Smashed beef, cheddar, pickles, house sauce, brioche.</p><div class="card-bottom"><strong>₹500</strong><button class="card-btn" type="button">Add to basket <i class="fas fa-plus"></i></button></div>
+    </article>
+    <article class="card" data-category="sweet" data-name="Chocolate waffles" data-price="9">
+        <img src="assets/images/choclatewaffle.jpeg" class="card-img" alt="Chocolate waffles">
+        <span class="card-tag">Sweet</span><h3 class="card-name">Chocolate waffles</h3><p class="card-description">Cocoa waffles, vanilla cream, chocolate drizzle.</p><div class="card-bottom"><strong>₹320</strong><button class="card-btn" type="button">Add to basket <i class="fas fa-plus"></i></button></div>
+    </article>
+    <article class="card" data-category="sweet" data-name="Lemon cream pie" data-price="8">
+        <img src="assets/images/lemon-sour-cream-pie-recipe.jpg" class="card-img" alt="Lemon cream pie">
+        <span class="card-tag">Sweet</span><h3 class="card-name">Lemon cream pie</h3><p class="card-description">Silky lemon curd, whipped cream, buttery pastry.</p><div class="card-bottom"><strong>₹280</strong><button class="card-btn" type="button">Add to basket <i class="fas fa-plus"></i></button></div>
+    </article>
+ </div>
+
+
+</section>
+
+
+<section class="section-3" id="gallery">
+    <div class="section-intro gallery-intro"><div><span class="eyebrow">A little inspiration</span><h2 class="section-heading">Eat with your eyes</h2></div><p>Big flavors, colorful plates, and plenty of reasons to linger.</p></div>
+
+<div class="gallery"> 
+    <a href="#menu" class="gallery-link" title="Order pancakes">
+        <img src="assets/images/3.png" alt="Pancakes"  class="food-img">
+        <h3 class="food-name">Pancakes</h3>
+        <p class="food-description"><strong>Berry buttermilk stack</strong> Fluffy pancakes layered with fresh berries, maple cream, and a warm pour of maple syrup.</p>
+
+    </a>
+    <a href="#menu" class="gallery-link" title="Order pizza">
+        <img src="assets/images/4.png" alt="Pizza"  class="food-img">
+        <h3 class="food-name">Pizza</h3>
+        <p class="food-description"><strong>Garden wood-fired pizza</strong> Slow-fermented dough topped with tomato, mozzarella, basil, and a bright drizzle of olive oil.</p>
+
+    </a>
+    <a href="#menu" class="gallery-link" title="Order burger">
+        <img src="assets/images/5.png" alt="Burger"  class="food-img">
+        <h3 class="food-name">Burger</h3>
+        <p class="food-description"><strong>Classic smash burger</strong> Two crisp-edged beef patties, melted cheddar, pickles, and house sauce tucked into a toasted brioche bun.</p>
+
+    </a>
+</div>
+
+
+</section>
+
+<section class="section-4" id="contact">
+
+    <div class="section-4-text">
+    <span class="eyebrow">Stay in the loop</span><h2 class="section-4-heading">Good news, served fresh.</h2>
+    <p class="section-4-paragarph">Join our community and get <strong>10% off your first order</strong>, along with exclusive seasonal deals, new specials, and local event updates.
+     </p>
+    </div>
+    <form action="" class="signup-form">
+        <input type="email" class="signup-form-input" placeholder="Your email address" required>
+        <button type="submit" class="signup-form-btn">
+            <i class="fas fa-arrow-right">
+
+            </i>
+        </button>
+
+    </form>
+    
+</section>
+
+<footer class="site-footer"><span>© 2026 Bite &amp; Bloom</span><span>Open daily · 11am—10pm</span><span>Made for sharing.</span></footer>
+
+
+</div>
+
+
+
+    <script src="script.js"> </script>
+</body>
+</html>

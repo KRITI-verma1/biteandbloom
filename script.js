@@ -46,9 +46,30 @@ const updateCart = () => {
    cartCount.textContent = quantity;
    cartTotal.textContent = formatCurrency(total);
    cartItems.innerHTML = basket.length
-      ? basket.map((item) => `<div class="cart-line"><span>${item.name}<small>Qty ${item.quantity}</small></span><strong>${formatCurrency(item.price * item.quantity)}</strong></div>`).join('')
+      ? basket.map((item) => `<div class="cart-line"><div><strong>${item.name}</strong><small>${formatCurrency(item.price)} each</small><div class="quantity-controls"><button type="button" class="quantity-button" data-action="decrease" data-name="${item.name}" aria-label="Decrease ${item.name}">−</button><span>${item.quantity}</span><button type="button" class="quantity-button" data-action="increase" data-name="${item.name}" aria-label="Increase ${item.name}">+</button></div></div><div class="cart-line-end"><strong>${formatCurrency(item.price * item.quantity)}</strong><button type="button" class="remove-item" data-action="remove" data-name="${item.name}">Remove</button></div></div>`).join('')
       : '<p class="empty-cart">Your basket is waiting for something delicious.</p>';
 };
+
+const changeBasketQuantity = (name, change) => {
+   const item = basket.find((basketItem) => basketItem.name === name);
+   if (!item) return;
+   item.quantity += change;
+   if (item.quantity <= 0) basket.splice(basket.indexOf(item), 1);
+   updateCart();
+};
+
+cartItems.addEventListener('click', (event) => {
+   const button = event.target.closest('[data-action]');
+   if (!button) return;
+   const action = button.dataset.action;
+   if (action === 'remove') {
+      const itemIndex = basket.findIndex((item) => item.name === button.dataset.name);
+      if (itemIndex !== -1) basket.splice(itemIndex, 1);
+      updateCart();
+      return;
+   }
+   changeBasketQuantity(button.dataset.name, action === 'increase' ? 1 : -1);
+});
 
 document.querySelectorAll('.card-btn').forEach((button) => {
    button.addEventListener('click', () => {
